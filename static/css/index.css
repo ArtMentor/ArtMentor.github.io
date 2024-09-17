@@ -132,6 +132,27 @@ body {
 .eql-cntrb { 
   font-size: smaller;
 }
+.results-carousel .item img {
+  max-width: 100%; /* Ensures the image will never exceed the container width */
+  height: 400px; /* Keeps the aspect ratio intact */
+  width: auto; /* You can adjust this value to make the image smaller */
+  margin: 0 auto; /* Centers the image horizontally */
+  display: block;
+}
+
+.implications-box {
+  background-color: #f8d7da; /* Light red background */
+  border: 1px solid #f5c6cb; /* Slightly darker border */
+  padding: 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  font-family: 'Arial', sans-serif; /* Font styling */
+  color: #721c24; /* Dark red text */
+  font-size: 16px; /* Font size */
+  margin: 10px auto; /* Center the box horizontally */
+  max-width: 900px; /* Constrain the width */
+  text-align: left; /* Align text to the left */
+}
+
 
 
 

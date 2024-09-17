@@ -43,6 +43,88 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+<style>
+  .json-structure-analysis .file-type {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+  .json-structure-analysis .file-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+ .json-structure-analysis .file-type h2 {
+  margin-top: 0;
+  color: #333333;
+  border-bottom: 2px solid #666666;
+  padding-bottom: 10px;
+}
+  .json-structure-analysis .collapsible {
+  background-color: #e0e0e0;
+  color: #333333;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  transition: 0.4s;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.json-structure-analysis .active, .json-structure-analysis .collapsible:hover {
+  background-color: #cccccc;
+}
+  .json-structure-analysis .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+     background-color: #f5f5f5;
+    border-radius: 0 0 5px 5px;
+  }
+  .json-structure-analysis pre[class*="language-"] {
+    background: #282c34;
+    margin: 0;
+    padding: 1em;
+    overflow: auto;
+  }
+  .json-structure-analysis code[class*="language-"] {
+    color: #abb2bf;
+    text-shadow: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  }
+  .json-structure-analysis .token.punctuation { color: #abb2bf; }
+  .json-structure-analysis .token.property { color: #e06c75; }
+  .json-structure-analysis .token.string { color: #98c379; }
+ .json-structure-analysis .token.number {
+  font-size: inherit;  /* 使用与周围文本相同的字体大小 */
+  color: inherit;  /* 使用与周围文本相同的颜色 */
+  background: none;  /* 移除任何背景 */
+  font-weight: normal;  /* 确保不加粗 */
+  padding: 0;  /* 移除内边距 */
+  margin: 0;  /* 移除外边距 */
+  vertical-align: baseline;  /* 确保垂直对齐正确 */
+  line-height: inherit;  /* 使用与周围文本相同的行高 */
+  display: inline;  /* 确保数字与其他文本在同一行 */
+  position: static;  /* 防止定位影响 */
+}
+  .json-structure-analysis .token.boolean { color: #56b6c2; }
+  .json-structure-analysis .token.null { color: #c678dd; }
+</style>
 </head>
 <body>
 
@@ -70,48 +152,45 @@
                   </div>
 
                   <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+            
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/ArtMentor/ArtMentorApp" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>App Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/ArtMentor/ArtMentorAnalysis" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Analysis Code</span>
-                </a>
-              </span>
+                 <!-- Github links -->
+<span class="link-block">
+  <a href="https://github.com/ArtMentor/ArtMentorApp" target="_blank"
+  class="external-link button is-normal is-rounded is-dark">
+    <span class="icon">
+      <i class="fas fa-globe"></i>
+    </span>
+    <span>App Code</span>
+  </a>
+</span>
+<span class="link-block">
+  <a href="https://github.com/ArtMentor/ArtMentorAnalysis" target="_blank"
+  class="external-link button is-normal is-rounded is-dark">
+    <span class="icon">
+      <i class="fas fa-code"></i>
+    </span>
+    <span>Analysis Code</span>
+  </a>
+</span>
+<span class="link-block">
+  <a href="https://github.com/ArtMentor/ArtMentorAnalysis" target="_blank"
+  class="external-link button is-normal is-rounded is-dark">
+    <span class="icon">
+      <i class="fas fa-database"></i>
+    </span>
+    <span>Dataset</span>
+  </a>
+</span>
+<span class="link-block">
+  <a href="https://github.com/ArtMentor/ArtMentorAnalysis" target="_blank"
+  class="external-link button is-normal is-rounded is-dark">
+    <span class="icon">
+      <i class="fas fa-chart-bar"></i>
+    </span>
+    <span>Data Analysis</span>
+  </a>
+</span>
             </div>
           </div>
         </div>
@@ -120,24 +199,16 @@
   </div>
 </section>
 
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <article class="message is-danger">
-        <div class="message-header">
-          <p>Important Notice</p>
-          <button class="delete" aria-label="delete"></button>
-        </div>
-        <div class="message-body">
-          This document and its contents are prepared for blind peer review for submission to CHI 2025 (Conference on Human Factors in Computing Systems). Thank you for your review.
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+<div class="implications-box flex items-center bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4">
+  <div class="flex items-center bg-pink-100 text-pink-700 p-2 rounded-md">
+  <i class="fas fa-lightbulb text-pink-500 mr-2"></i>
+  <span class="font-bold mr-2">Notice:</span>
+  <span class="text-sm">This document and its contents are prepared for blind peer review for submission to CHI 2025.</span>
+</div>
+</div>
 
 
-<!-- Teaser video-->
+<!-- Teaser video-- >
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -162,7 +233,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Multimodal Large Language Models (MLLMs) face challenges in artwork evaluation, including subjective human assessments, limitations of result-oriented methods, and lack of modularity. In this paper, we propose that the design and analysis of HCI spaces, using process-oriented data, can more effectively evaluate MLLM capabilities and drive improvements. Applying this methodology, we introduce ArtMentor, a space that combines a dataset and three systems to enhance MLLM evaluations. ArtMentor documents 380 sessions with five art teachers, assessing artworks across nine critical dimensions. The modular system features entity recognition, review generation, and suggestion generation agents, enabling iterative upgrades. Process-based results analysis integrates machine learning and natural language processing to ensure reliable evaluations. Finally, we emphasize MLLM’s focus on details at the expense of the bigger picture and the superior performance of review generation compared to suggestion generation. We encourage further collaboration to cost-effectively enhance MLLM capabilities. Our contributions are available at https://artmentor.github.io.
           </p>
         </div>
       </div>
@@ -179,30 +250,86 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/fig1'.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          A multi-agent data collection system from ArtMentor evaluates GPT-4o's art assessment capabilities across 380 sessions with five art teachers and three GPT-4o agents. Each session begins with artwork upload, followed by automatic entity recognition. Teachers refine these entities, select from nine evaluation dimensions, and revise the generated scores, reviews, and suggestions until accurate. The process ends with teachers submitting the finalized entities, scores, reviews, and suggestions.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/fig2'.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          ArtMentor Space consists of four key components: a. Multi-Agent Data Collection System, b. HCI Dataset, c. Data Analysis System, d. Iterative Upgrades System. The Multi-Agent System includes three agents: E-Agent for entity recognition, R-Agent for review generation, and S-Agent for suggestions. R-Agent and S-Agent perform nine roles, such as Realism and Deformation. Nine HCI processes (P1-P9) are marked by origin: green for computer, orange for human. After data collection, we generate an HCI dataset with five products, evaluated by four metrics. Iterative upgrades focus on improving underperforming roles.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/fig3'.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+          E-Agent and art teacher interaction collection.
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <img src="static/images/fig4'.png" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        R & S-Agent and art teacher interaction collection.
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/fig5'.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Recognition of art styles by GPT-4o across 20 artworks (Artwork Numbers 1-20).
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/fig6'.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Average entity recognition capability of GPT-4o.
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/fig7'.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Entity classification metrics for GPT-4o across 20 artworks (Artwork Numbers 1-20).
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/fig8'.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Score Acceptance Metrics.
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/fig9'.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Text Acceptance Metrics for R-Agent.
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/fig10'.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Text Acceptance Metrics for S-Agent.
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/table1.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Assessment Criteria for Realistic Artwork
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/table2.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Prompt Generation Logic for Suggestion Agent
       </h2>
     </div>
   </div>
@@ -210,19 +337,136 @@
 </div>
 </section>
 <!-- End image carousel -->
+<!--JSON File Structure Analysis-->
+<section class="section json-structure-analysis">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" align="center">HCI File Structure Analysis</h2>
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+    <div class="file-type">
+<h2 style="font-size: 1.5rem; font-weight: 600;">Entities Folder</h2>
+      <p>This folder contains 20 JSON files, each representing the data of an entity.</p>
+      <button class="collapsible">View JSON Example</button>
+      <div class="content">
+        <pre><code class="language-json">
+{
+  "original": ["Face", "Black hair", "Open mouth", "Green shirt", "Blue shorts", "Black shoes", "Monkey", "Cat", "Dog", "Bird", "Insect", "Exclamation mark", "Yellow platform", "Books"],
+  "added": ["Yellow balances", "schoolbag"],
+  "removed": ["Yellow platform"],
+  "style": {
+    "original": ["Style: Cartoon"],
+    "added": [],
+    "removed": []
+  }
+}
+        </code></pre>
+      </div>
+      <div class="explanation">
+        <h3 style="font-size: 1.2rem; font-weight: 600;">Field Explanations:</h3>
+        <ul>
+          <li><strong>original</strong>: Elements recognized in the original image</li>
+          <li><strong>added</strong>: New elements added by the user</li>
+          <li><strong>removed</strong>: Elements removed by the user</li>
+          <li><strong>style</strong>: Style-related information, including original style, added styles, and removed styles</li>
+        </ul>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+
+    <div class="file-type">
+      <h2  style="font-size: 1.5rem; font-weight: 600;">score_Review Folder</h2>
+      <p>This folder contains 180 files, each representing scores and reviews for a photo across 9 dimensions.</p>
+      <button class="collapsible">View JSON Example</button>
+      <div class="content">
+        <pre><code class="language-json">
+[
+  {
+    "round": 1,
+    "data": {
+      "scores": {
+        "original": 0,
+        "current": 0,
+        "initGPTscore": null
+      },
+      "Reviews": {
+        "original": "",
+        "current": "",
+        "added": "",
+        "removed": ""
+      }
+    }
+  },
+  {
+    "round": 2,
+    "data": {
+      "scores": {
+        "original": 4,
+        "current": 4,
+        "initGPTscore": 4
+      },
+      "Reviews": {
+        "original": "The artwork effectively uses contrasting colors to enhance visual interest...",
+        "current": "The artwork effectively uses contrasting colors to enhance visual interest...",
+        "added": "",
+        "removed": ""
+      }
+    }
+  }
+]
+        </code></pre>
+      </div>
+      <div class="explanation">
+        <h3 style="font-size: 1.2rem; font-weight: 600;">Field Explanations:</h3>
+        <ul>
+          <li><strong>round</strong>: Scoring round</li>
+          <li><strong>scores</strong>: Contains original score, current score, and initial GPT score</li>
+          <li><strong>Reviews</strong>: Contains original review, current review, added review, and removed review</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="file-type">
+      <h2  style="font-size: 1.5rem; font-weight: 600;">suggestion Folder</h2>
+      <p>This folder contains 180 files, each representing suggestions for a photo across 9 dimensions.</p>
+      <button class="collapsible">View JSON Example</button>
+      <div class="content">
+        <pre><code class="language-json">
+[
+  {
+    "round": 1,
+    "data": {
+      "suggestions": {
+        "original": "",
+        "current": "",
+        "added": "",
+        "removed": ""
+      }
+    }
+  },
+  {
+    "round": 2,
+    "data": {
+      "suggestions": {
+        "original": "To improve the color contrast in the artwork, consider using more vibrant and varied background colors...",
+        "current": "To improve the color contrast in the artwork, consider using more vibrant and varied background colors...",
+        "added": "",
+        "removed": ""
+      }
+    }
+  }
+]
+        </code></pre>
+      </div>
+      <div class="explanation">
+        <h3 style="font-size: 1.2rem; font-weight: 600;">Field Explanations:</h3>
+        <ul>
+          <li><strong>round</strong>: Suggestion round</li>
+          <li><strong>suggestions</strong>: Contains original suggestion, current suggestion, added suggestion, and removed suggestion</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End JSON File Structure Analysis-->
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -248,6 +492,26 @@
     </div>
   </div>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+
+    // 使用 Prism.js 高亮代码
+    Prism.highlightAll();
+  });
+</script>
   </body>
   </html>
