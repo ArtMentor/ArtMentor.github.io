@@ -48,7 +48,7 @@ const ArtMentorHeader = () => {
 </span>
                                       &nbsp;&nbsp;&nbsp;&nbsp;
                                       <span class="link-block">
-  <a href="https://github.com/ArtMentor/ArtMentorAnalysis" target="_blank"
+  <a href="https://github.com/ArtMentor/ArtMentorAnalysis/tree/main/Dataset" target="_blank"
      class="external-link button is-normal is-rounded is-dark">
     <span class="icon">
       <i class="fas fa-database"></i>
@@ -58,7 +58,7 @@ const ArtMentorHeader = () => {
 </span>
                                       &nbsp;&nbsp;&nbsp;&nbsp;
                                       <span class="link-block">
-  <a href="https://github.com/ArtMentor/ArtMentorAnalysis" target="_blank"
+  <a href="https://artmentor.github.io/artmentor-dashboard/" target="_blank"
      class="external-link button is-normal is-rounded is-dark">
     <span class="icon">
       <i class="fas fa-chart-bar"></i>
